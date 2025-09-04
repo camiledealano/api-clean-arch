@@ -19,6 +19,47 @@ O projeto segue os princípios da Clean Architecture, organizando o código em c
 * **MapStruct**: Para mapeamento entre objetos DTO e entidades
 * **Maven**: Ferramenta de automação de build
 
+## Estrutura do Projeto
+```
+api-clean-arch/
+├── src/
+│   ├── main/
+│     ├── java/
+│     │   └── com/
+│     │       └── example/
+│     │           └── API_CLEAN_ARCH/
+│     │               ├── ApiCleanArchApplication.java    # Classe principal da aplicação
+│     │               ├── application/                  # Camada de Aplicação
+│     │               │   ├── dto/                    # Data Transfer Objects (DTOs)
+│     │               │   │   ├── TarefaRequest.java
+│     │               │   │   └── TarefaResponse.java
+│     │               │   ├── mapper/                 # Mapeadores entre DTOs e Entidades
+│     │               │   │   └── TarefaMapper.java
+│     │               │   └── usercases/              # Casos de Uso
+│     │               │       └── TarefaUserCase.java
+│     │               ├── domain/                     # Camada de Domínio
+│     │               │   ├── model/                  # Modelos de dados e enums
+│     │               │   │   ├── enums/
+│     │               │   │   │   ├── Prioridade.java
+│     │               │   │   │   └── Status.java
+│     │               │   │   └── Tarefa.java
+│     │               │   ├── repository/             # Interfaces de Repositório
+│     │               │   │   └── TarefaRepository.java
+│     │               │   └── service/                # Serviços de Domínio
+│     │               │       └── TarefaService.java
+│     │               └── infrastructure/             # Camada de Infraestrutura
+│     │                   ├── controller/             # Controladores REST
+│     │                   │   └── TarefaController.java
+│     │                   ├── persistence/            # Implementações de Persistência (JPA)
+│     │                   │   └── TarefaEntity.java
+│     │                   └── service/                # Implementações de Serviços
+│     │                       └── TarefaServiceImpl.java
+│     └── resources/
+│          └── application.properties  # Configurações da aplicação
+│  
+└── README.md
+```
+
 ## Como Executar o Projeto
 
 ### Pré-requisitos
